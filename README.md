@@ -2,32 +2,59 @@
 Juan Dennis Herrera Lurita
 
 # Video de presentacion
-
-
+[Ver video de presentación](https://drive.google.com/drive/folders/1OdNbk0q9qNYhiCDtK6IsoyLC2qnyKMcs?usp=sharing)
 
 # patroclo-store-premiun
- Pagina Web con el curso de taller de programacion Web Laravel
+Página Web con el curso de taller de programación Web Laravel
 
-# requisitos
-- node js 18>= validar con node -v
-- php
-- instalar composer : https://getcomposer.org/
+# Requisitos
+- Node.js 18 o superior (validar con `node -v`)
+- PHP
+- Instalar Composer: [https://getcomposer.org/](https://getcomposer.org/)
 
+# Pasos iniciales para la instalación
 
-# pasos iniciales para la instalacion
+1. Crear el archivo `.env` con el contenido de `.env.example`.
+2. Configurar base de datos PostgreSQL en `.env` (nombre de la BD, usuario y clave).
+3. Ejecutar:
+   ```sh
+   npm install
+   ```
+4. Ejecutar:
+   ```sh
+   composer install
+   ```
+5. Generar la clave de la aplicación:
+   ```sh
+   php artisan key:generate
+   ```
+6. Ejecutar migraciones:
+   ```sh
+   php artisan migrate
+   ```
+7. Poblar la base de datos con datos iniciales:
+   ```sh
+   php artisan db:seed
+   ```
 
-- crear archivo .env con el contenido de .env.example
-- configurar base de datos psql en .env (nombre bd, usuario y clave)
-- ejecutar: npm install
-- ejecutar: composer install
-- ejecutar: php artisan key:generate
-- ejecutar: php artisan migrate
-- ejecutar: php artisan db:seed
+# Pasos para ejecutar el proyecto (en paralelo en ambas terminales)
 
-# pasos para ejecutar el proyecto ( en paralelo ambas terminales)
-- ejecutar en una terminal: npm run dev
-- ejecutar en una terminal: php artisan serve
+- En una terminal, ejecutar:
+  ```sh
+  npm run dev
+  ```
+- En otra terminal, ejecutar:
+  ```sh
+  php artisan serve
+  ```
 
-# comandos mas usados
-- php artisan make:controller CategoriaController
-- php artisan make:model Categoria
+# Comandos más usados
+
+- Crear un controlador:
+  ```sh
+  php artisan make:controller CategoriaController
+  ```
+- Crear un modelo:
+  ```sh
+  php artisan make:model Categoria
+  ```
