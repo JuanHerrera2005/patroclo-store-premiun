@@ -22,11 +22,16 @@ class ProductoController extends Controller
 
     public function show($idProducto)
     {
-        $producto = Producto::with(['marca', 'proveedor', 'subcategoria.categoria'])
-                          ->findOrFail($idProducto);
+        $producto = Producto::with(['marca', 'proveedor', 'subcategoria.categoria', 'imagenes'])
+                            ->findOrFail($idProducto);
         
-        $imagenes = [$producto->imagen_url]; // Array con la imagen principal
+      
+        $imagenes = $producto->imagenes->pluck('imagen_url')->toArray();
+        if (!in_array($producto->imagen_url, $imagenes)) {
+            array_unshift($imagenes, $producto->imagen_url);
+        }
         
         return view('Detalleproducto', compact('producto', 'imagenes'));
     }
+    
 }
