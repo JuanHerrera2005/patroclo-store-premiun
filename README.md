@@ -1,3 +1,10 @@
+# Estudiante 
+Juan Dennis Herrera Lurita
+
+# Video de presentacion
+
+
+
 # patroclo-store-premiun
  Pagina Web con el curso de taller de programacion Web Laravel
 
@@ -5,6 +12,7 @@
 - node js 18>= validar con node -v
 - php
 - instalar composer : https://getcomposer.org/
+
 
 # pasos iniciales para la instalacion
 
